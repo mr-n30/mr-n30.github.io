@@ -1,2 +1,11 @@
 <h1>Hello, World!</h1>
-<script>alert(1)</script>
+<script>
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+    if (xhr.readyState == XMLHttpRequest.DONE) {
+        alert(xhr.responseText);
+    }
+}
+xhr.open('GET', 'file:///sdcard/Download/hello.txt', true);
+xhr.send(null);
+</script>
