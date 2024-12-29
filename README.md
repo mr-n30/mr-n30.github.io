@@ -1,7 +1,7 @@
 # mr-n30
 Hello, World! Welcome to my GitHub web page 🚀
 
-## GitHub Profile:
+## GitHub Profile
 [mr-n30](https://github.com/mr-n30)
 
 ## Projects Completed
