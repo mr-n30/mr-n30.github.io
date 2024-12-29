@@ -1,14 +1,12 @@
-# Projects Page
-This page lists some of the projects I've finished
-
----
+# mr-n30
+Hello, World! Welcome to my GitHub web page 🚀
 
 ## GitHub Profile:
 [mr-n30](https://github.com/mr-n30)
 
----
-
 ## Projects Completed
+This section lists some of the projects I've finished
+
 ### 2023
 - [good-tamal-landing-page](https://mr-n30.github.io/good-tamal-landing-page/)
 - [react-js-random-motivational-quotes](https://mr-n30.github.io/react-js-random-motivational-quotes/)
