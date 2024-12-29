@@ -8,7 +8,7 @@ This page lists some of the projects I've finished
 
 ---
 
-## Projects
+## Projects Completed
 ### 2023
 - [good-tamal-landing-page](https://mr-n30.github.io/good-tamal-landing-page/)
 - [react-js-random-motivational-quotes](https://mr-n30.github.io/react-js-random-motivational-quotes/)
