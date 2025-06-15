@@ -52,7 +52,7 @@
 
         #deleteButton2 {
             position: absolute;
-            top: 70px;
+            top: 35px;
             bottom: 0;
             left: 0;
             right: 0;
@@ -99,13 +99,13 @@
         // Hide Double click button
         startButton.style = "display: none"
 
-        setTimeout(() => {
-            // Reload iframe
-            iframe.src = "https://app.oliviahealth.ai/account/delete-account"
-        }, 2500)
+        // Reload iframe
+        iframe.src = "https://app.oliviahealth.ai/account/delete-account"
 
-        // Show delete button
-        deleteButton1.style = "display: inline-block; z-index: -1;"
+        setTimeout(() => {
+            // Show delete button
+            deleteButton1.style = "display: inline-block; z-index: -1;"
+        }, 2500)
 
         setTimeout(() => {
             // Hide delete button
