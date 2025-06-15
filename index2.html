@@ -19,7 +19,7 @@
             height: 100%;
         }
 
-        #olivia {
+        #oliviaIframe {
             width: 100%;
             position: absolute;
             z-index: 1;
@@ -40,9 +40,8 @@
         }
 
         #deleteButton {
-            z-index: 2;
             position: absolute;
-            top: 70px;
+            top: 20px;
             bottom: 0;
             left: 0;
             right: 0;
@@ -57,7 +56,7 @@
 <body>
     <iframe id="oliviaIframe" src="https://app.oliviahealth.ai/home"></iframe>
     <button id="doubleClickButton" onclick="handleButton()">Double Click to Start Verification</button>
-    <button id="deleteButton">Click to Start Verification</button>
+    <button id="deleteButton">Double Click to Start Verification</button>
 </body>
 <script>
     const doubleClickButton = document.getElementById("doubleClickButton");
@@ -68,13 +67,11 @@
         // Hide Double click button
         doubleClickButton.style = "display: none"
 
-        // Reloads the iframe
-        setTimeout(function () {
-            iframe.src = "https://app.oliviahealth.ai/account/delete-account"
+        // Reload iframe
+        iframe.src = "https://app.oliviahealth.ai/account/delete-account"
 
-            // Show delete button
-            deleteButton.style = "display: inline-block"
-        }, 1000);
+        // Show delete button
+        deleteButton.style = "display: inline-block; z-index: -1;"
 
         return
     }
