@@ -39,7 +39,7 @@
             border-radius: 50%;
         }
 
-        #deleteButtonStep1 {
+        #deleteButton {
             z-index: 2;
             position: absolute;
             top: 70px;
@@ -55,23 +55,26 @@
 </head>
 
 <body>
-    <iframe id="oliviaIframe" src="https://app.oliviahealth.ai/account/email"></iframe>
-    <button id="doubleClickButton" onclick="rotateButton('doubleClickButton')">Double Click to Start
-        Verification</button>
+    <iframe id="oliviaIframe" src="https://app.oliviahealth.ai/home"></iframe>
+    <button id="doubleClickButton" onclick="handleButton()">Double Click to Start Verification</button>
+    <button id="deleteButton">Click to Start Verification</button>
 </body>
 <script>
     const doubleClickButton = document.getElementById("doubleClickButton");
     const iframe = document.getElementById("oliviaIframe")
+    const deleteButton = document.getElementById("deleteButton")
 
-    const rotateButton = step => {
-        if (step === "doubleClickButton") {
-            doubleClickButton.style = "display: none"
+    const handleButton = step => {
+        // Hide Double click button
+        doubleClickButton.style = "display: none"
 
-            // Reloads the iframe
-            setTimeout(function () {
-                iframe.src = "https://app.oliviahealth.ai/account/delete-account"
-            }, 1000);
-        }
+        // Reloads the iframe
+        setTimeout(function () {
+            iframe.src = "https://app.oliviahealth.ai/account/delete-account"
+
+            // Show delete button
+            deleteButton.style = "display: inline-block"
+        }, 1000);
 
         return
     }
