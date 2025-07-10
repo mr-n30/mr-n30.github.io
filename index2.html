@@ -55,7 +55,6 @@
         .payload {
             width: 100%;
             height: 100%;
-            border: 1px solid green;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -70,13 +69,15 @@
         }
 
         #verifyButton {
-            margin-top: 6.5rem;
+            margin-top: 7.5rem;
+            z-index: -1;
         }
 
         .button-group {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
         }
 
         .fake-input-box-group {
@@ -86,17 +87,12 @@
             gap: 1rem;
         }
 
-        .fake-input-box {
-            width: 500px;
+        .clickable-circle {
+            width: 30px;
             height: 30px;
-            border: 1px solid grey;
-            margin: 1.5rem auto;
-            text-align: center;
-            padding-top: .3rem;
-        }
-
-        #verifyButton {
-            z-index: -1;
+            border-radius: 50%;
+            background-color: black;
+            margin-top: 1rem;
         }
 
         #startPayload {
@@ -119,18 +115,17 @@
         <div class="payload" id="payload">
             <ol>
                 <li>Click the "COPY CAPTCHA CODE" below</li>
-                <li>Click 3 times on the box then paste with CTRL+V or Mouse</li>
+                <li>Click the circle below 3 times then paste with keyboard (CTRL+V)</li>
                 <li>Click the VERIFY button</li>
                 <div class="button-group">
                     <button onclick="copyCaptcha()" id="copyButton">COPY CAPTCHA CODE</button>
-                    <div class="fake-input-box">CLICK 3 TIMES HERE THEN PASTE YOUR CAPTCHA CODE</div>
+                    <div id="clickableCircle" class="clickable-circle"></div>
                     <button onmouseover="hideVerifyButton()" id="verifyButton">VERIFY</button>
                 </div>
             </ol>
         </div>
     </body>
     <script>
-
         function startPayload() {
             document.getElementById("startPayload").style = "display: none";
             document.getElementById("payload").style = "display: flex";
