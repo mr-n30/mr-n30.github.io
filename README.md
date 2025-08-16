@@ -14,6 +14,6 @@ Below is a list of all of my projects.
 - [online-drum-machine](https://mr-n30.github.io/online-drum-machine/)
 - [online-calculator](https://mr-n30.github.io/online-calculator/)
 - [online-timer](https://mr-n30.github.io/online-timer/)
-- [base64-decode](https://mr-n30.github.io/base64-decode/)
+- [base64-online](https://mr-n30.github.io/base64-online/)
 - [react-facts](https://mr-n30.github.io/react-facts/)
 - [travel-journal](https://mr-n30.github.io/travel-journal/)
