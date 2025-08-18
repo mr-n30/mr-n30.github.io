@@ -5,7 +5,7 @@ Below is a list of all of my projects.
 [mr-n30](https://github.com/mr-n30)
 
 # Professional Projects
-- [IBM Certificate Project - John Wick](https://mr-n30.github.io/john-wick-ibm-certificate-project/)
+- [IBM Certificate Project - John Wick](https://mr-n30.github.io/ibm-certificate-project-john-wick/)
 
 # Fun Random Projects
 - [good-tamal-landing-page](https://mr-n30.github.io/good-tamal-landing-page/)
